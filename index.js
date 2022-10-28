@@ -5,7 +5,7 @@
 // `data` is the data you encrypted and passed into `evervault.run` from your server. The Function 
 // automatically decrypts the data and maintains its structure so you can treat event exactly as 
 // you did when you passed it into `evervault.run`.
-exports.handler = async (data) => {
+exports.handler = async (data, context) => {
     // Check if the data sent into the Function included the `name` key
     if (data.name && typeof data.name === "string") {
         console.debug(`A name of length ${data.name.length} has arrived into the Function.`);
@@ -14,7 +14,7 @@ exports.handler = async (data) => {
         // Note all Functions have the evervault SDK automatically injected into their global scope.
         return {
             message: `Hello from a Function! It seems you have ${data.name.length} letters in your name`,
-            name: await evervault.encrypt(data.name),
+            name: context.encrypt(data.name),
         };
     } else {
         console.debug('An empty name has arrived into the Function.');
