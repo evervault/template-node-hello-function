@@ -10,8 +10,7 @@ exports.handler = async (data, context) => {
     if (data.name && typeof data.name === "string") {
         console.debug(`A name of length ${data.name.length} has arrived into the Function.`);
     
-        // Process the decrypted name value, and re-encrypt the original name using the globally available evervault package.
-        // Note all Functions have the evervault SDK automatically injected into their global scope.
+        // Process the decrypted name value, and re-encrypt the original name using the encrypt function available in the context parameter.
         return {
             message: `Hello from a Function! It seems you have ${data.name.length} letters in your name`,
             name: context.encrypt(data.name),
