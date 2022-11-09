@@ -1,7 +1,3 @@
-// The Evervault Node.js SDK (https://docs.evervault.com/sdk/nodejs) is pre-initialized in 
-// all Functions as the globally-scoped `evervault` object.This allows you to encrypt the result, 
-// and store it in your database.
-
 // `data` is the data you encrypted and passed into `evervault.run` from your server. The Function 
 // automatically decrypts the data and maintains its structure so you can treat event exactly as 
 // you did when you passed it into `evervault.run`.
