@@ -43,7 +43,7 @@ exports.handler = async (data) => {
 
     return {
       message: `Hello from a Function! It seems you have ${data.name.length} letters in your name`,
-      name: await evervault.encrypt(data.name),
+      name: await context.encrypt(data.name),
     };
   } else {
     console.debug('An empty name has arrived into the Function.');
