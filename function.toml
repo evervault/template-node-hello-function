@@ -1,4 +1,4 @@
 [function]
 name = "hello-function"
-language = "node@18"
+language = "node@24"
 handler = "index.handler"
